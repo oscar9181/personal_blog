@@ -5,7 +5,7 @@ posts = [
    {
     'author' :'Sophie Paxton',
     'title'  :'Interface Design',
-    'pitch'  :'Animation is like cursing. If you overuse it, it loses all its impact.',
+    'content'  :'Animation is like cursing. If you overuse it, it loses all its impact.',
     'date_posted' : 'October 17 2002'
    }]
 
