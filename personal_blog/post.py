@@ -1,7 +1,7 @@
 import os
 import secrets
 from PIL import Image
-from flask import render_template,url_for, flash,redirect,request
+from flask import render_template,url_for, flash,redirect,request,abort
 from personal_blog import app,db,bcrypt
 from personal_blog.models import User,Post
 from personal_blog.forms import RegistrationForm,LoginForm,UpdateAccountForm,PostForm
@@ -103,8 +103,31 @@ def new_post():
     return render_template('blogs.html', title='Blogs',form=form,legend='New Blog')
 
 
-@app.route("/post/<int:post_id>")
-def post(post_id):
-  post = Post.query.get_or_404(post_id)
+@app.route("/post/<int:post_id>/update",methods=['GET','POST'])
+@login_required
+def update_post(post_id):
+    post = Post.query.get_or_403(post_id)
+    if post.author !=current_user:
+        abort(403)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        db.session.commit()
+        flash('Your blog has been updated')
+        return redirect(url_for('post',post_id=post.id))
+    elif request.method == 'GET':
+        form.title.data = post.title
+        form.content.data = post.content
+    return render_template('blogs.html', title='Update Post',form=form,legend='Update Post')
 
-  return render_template('post.html', title='Post',post=post)
+
+@app.route('/post/delete/<int:post_id>',methods=['GET','POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get(post_id)
+    if post.author == current_user:
+        db.session.delete(post)
+        db.session.commit()
+    return redirect (url_for('home'))
+        
