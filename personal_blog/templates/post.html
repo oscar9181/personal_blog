@@ -1,0 +1,17 @@
+{% extends 'navbar.html'%}
+{% block content %}
+    <div class="container">
+        <article class="content-section">
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}" alt="" style="height: 50px;width: 50px;" >
+            <div class="media">
+              <div class="article-data">
+                <a class="mr-2" href="#">{{ post.author.username }}</a>
+                <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+              </div>
+              <h2 class="article-title">{{ post.title }}</a></h2>
+              <p class="art-content">{{ post.content }}</p>
+            </div>
+          </article>
+        </div>
+    
+{% endblock content %}
