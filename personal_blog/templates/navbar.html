@@ -13,6 +13,7 @@
     <script src=
 "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
     </script>
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -24,9 +25,7 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li>
-                <li><a href="#">Page 3</a></li>
+                
             </ul>
             {% if current_user.is_authenticated  %}
             
