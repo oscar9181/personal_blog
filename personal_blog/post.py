@@ -143,7 +143,7 @@ def create_comment(post_id):
         db.session.commit()
         flash('Comment posted successfully!', 'success')
         return redirect(url_for('post',post_id=post.id))
-    return render_template("create_comment.html", title="post a comment", form=form, legend="Post a comment")
+    return render_template("comment.html", title="post a comment", form=form, legend="Post a comment")
     
     
     

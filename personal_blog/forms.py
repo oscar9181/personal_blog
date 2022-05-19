@@ -68,4 +68,6 @@ class PostForm(FlaskForm):
 
 class CommentForm(FlaskForm):
     content = TextAreaField('Content', validators=[DataRequired()])
-    submit = SubmitField('Post')                  
+    submit = SubmitField('Post')  
+    
+                
