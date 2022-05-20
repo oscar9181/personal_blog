@@ -43,3 +43,8 @@ class Comments(db.Model):
     def __repr__(self):
         return f"Post('{self.content}', '{self.date_posted}')"
     
+class Quote:
+    def __init__(self, author, quote):
+        self.author = author
+        self.quote = quote
+    

@@ -4,13 +4,13 @@
     <div class="container">
         <article class="content-section">
           <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}" alt="" style="height: 50px;width: 50px;" >
-            <div class="media">
+            <div class="article">
               <div class="article-data">
                 <a class="mr-2" href="#">{{ post.author.username }}</a>
                 <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
               </div>
-              <h2><a class="art-title" href="#">{{ post.title }}</a></h2>
-              <p class="art-content">{{ post.content }}</p>
+              <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+              <p class="article-content">{{ post.content }}</p>
             </div>
         
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
@@ -25,7 +25,14 @@
                 <a href="{{ url_for('delete_post',post_id=post.id)}}">Delete</a>
             </div>
           </article>
-        </div>
-    {% endfor %}
+          {% endfor %}
+          <div class="card text-dark bg-warning mb-3">
+            <div class="card-header">Quotes</div>
+             <div class="card-body">
+               <h5 class="card-title">{{quote.author}}</h5>
+               <p class="card-text">{{quote.quote}}</p>
+             </div>
+          </div>
+    
 {% endblock content %}
 

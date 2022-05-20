@@ -1,5 +1,39 @@
 {% extends "navbar.html" %}
 {% block content%}
-    <h1>Comments</h1>
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Comment</legend>
+            <div class="form-group">
+                {{ form.body.label(class="form-control-label") }}
+                {% if form.body.errors %}
+                    {{ form.body(class="form-control form-control-lg is-invalid") }}
+
+                    {% if post.author == current_user %}
+           
+                    <div class="invalid-feedback">
+                        {% for error in form.body.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.body(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <a href="{{url_for('post', post_id=post.id)}}">{{ form.submit(class="btn btn-outline-info") }}</a>
+        </div>
+        {% for comment in post.comments %}
+        <article class="media content-section">
+            <div class="media-body">
+              <h2 class="article-title">{{ comment.date_posted.strftime('%Y-%m-%d') }}</h2>
+              <p class="article-content">{{ comment.content }}</p>
+              <p class="article-content">{{ comment.user.username }}</p>
+            </div>
+        </article>
+    </form>
+</div>
   
 {% endblock content %}
