@@ -4,12 +4,17 @@
 + This is a blog post app where a user can create his or her own post after he or she is already login        and also the  user can comment on the post and delete his or her post.
 
 ## User Stories
-+ I would like to create my own personal account
++ I would like to create my own personal accountfile:///home/oscar/Downloads/home.png
+
 + I would like to login anytime on the page since i  already have an account
 + I would like to update my own profile picture on my account
 + I would like create a post
 + I would like to to delete the post I created 
 + I would like to comment on my post
+
+### Homepage
+The homepage contains posts made by users and random quotes are displayed right below the navigation bar.file:///home/oscar/Downloads/home.png
+
 
 # License
  MIT License
