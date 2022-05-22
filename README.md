@@ -17,6 +17,15 @@ The homepage contains blogs made by users and random quotes are displayed right 
 ![PAGE](home.png)
 
 
+
+### Getting Started
+- Clone this repo and ```cd``` to navigate into the folder
+```sh 
+$ git clone https://github.com/oscar9181/personal_blog.git
+$ source virtual/bin/activate
+(virtual)$ pip install -r requirements.txt
+(virtual)$ python3 manage.py
+
 ## **Technologies used**
 1. Flask
 2. HTML5
