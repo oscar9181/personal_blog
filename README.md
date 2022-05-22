@@ -13,7 +13,14 @@
 + I would like to comment on my post
 
 ### Homepage
-The homepage contains posts made by users and random quotes are displayed right below the navigation bar.file:///home/oscar/Downloads/home.png
+The homepage contains blogs made by users and random quotes are displayed right below the navigation bar.
+
+
+## **Technologies used**
+1. Flask
+2. HTML5
+3. Bootstrap5
+
 
 
 # License
