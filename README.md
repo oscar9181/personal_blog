@@ -14,6 +14,7 @@
 
 ### Homepage
 The homepage contains blogs made by users and random quotes are displayed right below the navigation bar.
+(home.png)
 
 
 ## **Technologies used**
